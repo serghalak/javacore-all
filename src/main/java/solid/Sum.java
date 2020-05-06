@@ -1,6 +1,7 @@
 package solid;
 
 import solid.io.Data;
+import solid.io.IData;
 
 import java.util.Scanner;
 
@@ -11,16 +12,16 @@ public class Sum {
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        Data data=new Data(scanner);
+        IData data=new Data(scanner);
 
         //System.out.print("eneter number a = ");
-        data.print("eneter number a = ");
+        int a=data.input("eneter number a = ");
         //int a = scanner.nextInt();
-        int a=data.read();
+        //int a=data.read();
         //System.out.print("eneter number b = ");
-        data.print("eneter number b = ");
+        int b=data.input("eneter number b = ");
         //int b = scanner.nextInt();
-        int b=data.read();
+        //int b=data.read();
         int sum = a+b;
         System.out.println("sum="+sum);
 

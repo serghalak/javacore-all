@@ -4,10 +4,8 @@ import java.io.InputStream;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-/**
- * Created by serg on 06.05.20.
- */
-public class Data {
+
+public class Data implements IData{
 
     private Scanner scanner;
 
