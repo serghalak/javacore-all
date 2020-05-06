@@ -24,4 +24,9 @@ public class Data {
     public int read(){
         return scanner.nextInt();
     }
+
+    public int input(String text){
+        print(text);
+        return read();
+    }
 }
