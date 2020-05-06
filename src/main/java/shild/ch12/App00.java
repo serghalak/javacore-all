@@ -7,16 +7,24 @@ public class App00 {
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		// TODO Auto-generated method stub
 		
-		System.out.println("A".getBytes().length);
-		System.out.println("AA".getBytes().length);
-		
-		System.out.println("A".getBytes("UTF-16").length);
-		System.out.println("AA".getBytes("UTF-16").length);
-		byte[] str="AA".getBytes("UTF-16");
-		String s=new String(str);
-		System.out.println("s="+s);
-		//Arrays.to
-		System.out.println(str[0]+":"+str[1]);
+//		System.out.println("A".getBytes().length);
+//		System.out.println("AA".getBytes().length);
+//
+//		System.out.println("A".getBytes("UTF-16").length);
+//		System.out.println("AA".getBytes("UTF-16").length);
+//		byte[] str="AA".getBytes("UTF-16");
+//		String s=new String(str);
+//		System.out.println("s="+s);
+//		//Arrays.to
+//		System.out.println(str[0]+":"+str[1]);
+		testChar();
+	}
+
+	private static void testChar(){
+		Character a = Character.valueOf('a');
+		char c = a.charValue();
+		System.out.println("a="+a);
+		System.out.println("a="+c);
 	}
 
 }
