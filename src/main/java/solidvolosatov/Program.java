@@ -1,7 +1,7 @@
 package solidvolosatov;
 
-import solidvolosatov.io.Data;
-import solidvolosatov.io.IData;
+import solidvolosatov.io.*;
+import solidvolosatov.model.Model;
 import solidvolosatov.service.IService;
 import solidvolosatov.service.ServiceSum;
 
@@ -11,11 +11,23 @@ public class Program {
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-
+        IReader reader=new ReaderConsole(scanner);
+        IPrinter printer=new PrinterConsole();
         //
         //System.out.println("Enter a: " );
-        IData data=new Data(scanner);
+        IData data=new Data(reader,printer);
         //data.print("Entere a: ");
+        //end
+
+        //int sum=a+b;
+        IService serviceSum=new ServiceSum();
+
+
+        Model model=new Model();
+        model.init(data);
+        model.calc(serviceSum);
+        model.done(data);
+
         //end
 
         //
@@ -35,21 +47,18 @@ public class Program {
         //end
 
 
-        int a = data.input("Enter a : ");
-        int  b = data.input("Enter b: ");
+        //int a = data.input("Enter a : ");
+        //int  b = data.input("Enter b: ");
+        //int sum=serviceSum.calculate(a,b);
 
 
 
-        //int sum=a+b;
-        IService serviceSum=new ServiceSum();
-        int sum=serviceSum.calculate(a,b);
-        //end
 
         //
         //System.out.println("Result: " );
         //System.out.println(sum);
-        data.print("Result: ");
-        data.print(sum);
+        //data.print("Result: ");
+        //data.print(sum);
 
     }
 

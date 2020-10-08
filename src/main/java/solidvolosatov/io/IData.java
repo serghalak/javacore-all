@@ -1,9 +1,9 @@
 package solidvolosatov.io;
 
-public interface IData {
+public interface IData extends IReader,IPrinter{
 
-    int read();
-    void print(String text);
-    void print(int nnumber);
-    int input(String text);
+    default int input(String text){
+        print(text);
+        return read();
+    }
 }
