@@ -11,6 +11,12 @@ public class IOFiles {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
+
+		byte k= (byte) 254;
+		int i = Byte.toUnsignedInt(k);
+		System.out.println(i);
+		System.out.println("---> %  " + Math.floorMod(-35,8));
+		System.out.println("---> " + (-35%8));
 //		Scanner scanner = new Scanner(System.in);
 //		System.out.println("Hello. What is your name: ");
 //		String name=scanner.nextLine();
