@@ -1,6 +1,8 @@
 package solidvolosatov.service;
 
-public class ServiceSum {
+public class ServiceSum implements IService{
+
+    @Override
     public int calculate(int a , int b){
         return a+b;
     }

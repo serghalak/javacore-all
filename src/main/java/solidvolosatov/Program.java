@@ -1,6 +1,8 @@
 package solidvolosatov;
 
 import solidvolosatov.io.Data;
+import solidvolosatov.io.IData;
+import solidvolosatov.service.IService;
 import solidvolosatov.service.ServiceSum;
 
 import java.util.Scanner;
@@ -12,7 +14,7 @@ public class Program {
 
         //
         //System.out.println("Enter a: " );
-        Data data=new Data(scanner);
+        IData data=new Data(scanner);
         //data.print("Entere a: ");
         //end
 
@@ -39,7 +41,7 @@ public class Program {
 
 
         //int sum=a+b;
-        ServiceSum serviceSum=new ServiceSum();
+        IService serviceSum=new ServiceSum();
         int sum=serviceSum.calculate(a,b);
         //end
 
