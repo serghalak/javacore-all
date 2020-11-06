@@ -45,6 +45,7 @@ public class IOFiles {
 		String fileStr=scanner.nextLine();
 		System.out.println(System.getProperty("user.dir"));
 		System.out.println(fileStr);
+//		Arrays.copy
 //		{
 //			Scanner scanner=new Scanner(new File("d.txt"));
 //			
