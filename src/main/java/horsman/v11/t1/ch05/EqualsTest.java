@@ -14,6 +14,14 @@ public class EqualsTest {
 
 		Employee[] stuff=new Employee[]{boss,harry,tommy};
 
+		Manager[] arrManager = new Manager[]{boss};
+		Employee[] arrEmpl = new Employee[]{harry};
+		arrEmpl=arrManager;
+		arrEmpl[0]=tommy;
+		arrManager[0].setBonus(1000);
+		System.out.println(arrManager[0]);
+
+
 		for (Employee empl : stuff){
 			System.out.println("name="+ empl.getName()+", salary=" + empl.getSalary());
 		}
