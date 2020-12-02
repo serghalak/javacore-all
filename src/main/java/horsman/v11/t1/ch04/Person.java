@@ -1,6 +1,6 @@
 package horsman.v11.t1.ch04;
 
-public class Person {
+public class Person extends golovach.io.decoradapter.Person {
 	private String name;
 	private int age;
 	public String getName() {

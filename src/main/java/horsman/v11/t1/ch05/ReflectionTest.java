@@ -13,6 +13,11 @@ public class ReflectionTest {
 	         throws ReflectiveOperationException      
 	   {
 	      // read class name from command line args or user input
+
+		   testEmplMan();
+		   if(true)
+		   	return;
+
 	      String name;
 	      if (args.length > 0) name = args[0];
 	      else
@@ -40,7 +45,12 @@ public class ReflectionTest {
 	      System.out.println("}");
 	   }
 
-	   /**
+	private static void testEmplMan() {
+
+
+	}
+
+	/**
 	    * Prints all constructors of a class
 	    * @param cl a class
 	    */

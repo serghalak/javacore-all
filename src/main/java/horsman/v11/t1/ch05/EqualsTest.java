@@ -7,6 +7,27 @@ public class EqualsTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Manager boss=new Manager("Carl Cracker",80000,1987,12,15);
+		boss.setBonus(5000);
+		Employee harry=new Employee("Harry Hacker",50000,1989,10,1);
+		Employee tommy=new Employee("Tommy Tester",40000,1990,3,15);
+
+		Employee[] stuff=new Employee[]{boss,harry,tommy};
+
+		Manager[] arrManager = new Manager[]{boss};
+		Employee[] arrEmpl = new Employee[]{harry};
+		arrEmpl=arrManager;
+		arrEmpl[0]=tommy;
+		arrManager[0].setBonus(1000);
+		System.out.println(arrManager[0]);
+
+
+		for (Employee empl : stuff){
+			System.out.println("name="+ empl.getName()+", salary=" + empl.getSalary());
+		}
+
+		if(true)
+			return;
 //		  Employee alice1 = new Employee("Alice Adams", 75000, 1987, 12, 15);
 //	      Employee alice2 = alice1;
 //	      Employee alice3 = new Employee("Alice Adams", 75000, 1987, 12, 15);
@@ -32,14 +53,14 @@ public class EqualsTest {
 //	      System.out.println("bob.hashCode(): " + bob.hashCode());
 //	      System.out.println("carl.hashCode(): " + carl.hashCode());
 		
-		Size size=Size.LARGE;
-		System.out.println(""+size.toString());
-		System.out.println(""+size.name());
-		System.out.println(""+size.ordinal());
-		System.out.println(size.valueOf("LARGE"));
-		
-		System.out.println(""+Enum.valueOf(Size.class, "SMALL"));
-		System.out.println(""+Arrays.toString(size.values()));
+//		Size size=Size.LARGE;
+//		System.out.println(""+size.toString());
+//		System.out.println(""+size.name());
+//		System.out.println(""+size.ordinal());
+//		System.out.println(size.valueOf("LARGE"));
+//
+//		System.out.println(""+Enum.valueOf(Size.class, "SMALL"));
+//		System.out.println(""+Arrays.toString(size.values()));
 	}
 
 }
