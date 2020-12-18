@@ -72,9 +72,12 @@ public class Employee implements Cloneable{
 	         && salary == other.salary && Objects.equals(hireDay, other.hireDay);
 	   }
 
+	   @Override
 	   public int hashCode()
 	   {
-	      return Objects.hash(name, salary, hireDay); 
+	   		int hashCode=Objects.hash(name, salary, hireDay);
+		   	System.out.println(">>>>>"+hashCode);
+	   	return Objects.hash(name, salary, hireDay);
 	   }
 
 	   public String toString()
