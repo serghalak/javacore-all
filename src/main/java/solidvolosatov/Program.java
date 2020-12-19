@@ -5,13 +5,28 @@ import solidvolosatov.model.Model;
 import solidvolosatov.service.IService;
 import solidvolosatov.service.ServiceSum;
 
+import java.io.*;
 import java.util.Scanner;
 
 public class Program {
 
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        IReader reader=new ReaderConsole(scanner);
+
+        BufferedReader scanner=null;
+
+        try {
+            scanner=new BufferedReader(new FileReader("./numers.txt"));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //Scanner scanner=new Scanner(System.in);
+
+
+        //IReader reader=new ReaderConsole(scanner);
+        IReader reader=new ReaderFile(scanner);
         IPrinter printer=new PrinterConsole();
         //
         //System.out.println("Enter a: " );
