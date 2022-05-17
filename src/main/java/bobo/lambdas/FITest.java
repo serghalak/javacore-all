@@ -1,6 +1,7 @@
 package bobo.lambdas;
 
 import java.util.function.*;
+import java.util.stream.IntStream;
 
 public class FITest {
     public static void main(String[] args) {
@@ -22,5 +23,16 @@ public class FITest {
 
         Supplier<String>stringSupplier=() -> "Hello";
         System.out.println(stringSupplier.get());
+
+        //IntStream.iterate(10, i -> i+1).filter().reduce(1,(left, right) -> left*right);
+        int reduce = IntStream.rangeClosed(10, 20)
+                .filter(a -> IntStream.range(2, a-1 ).anyMatch(i -> a % i == 0))
+                .reduce(1, (x, y) -> x * y);
+        System.out.println(reduce);
+        int mult=1;
+        for (int i=10;i<=20;i++){
+            mult *=i;
+        }
+        System.out.println(mult);
     }
 }
