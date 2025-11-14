@@ -3,10 +3,20 @@ package sertification.igor.part01;
 import java.util.Arrays;
 import java.util.List;
 
-public class VariableScope {
+public  class VariableScope {
 
     private static int age;
     private String name;
+
+    static{
+        age=0;
+    }
+
+
+    public VariableScope() {
+        this.name = "";
+        this.age = 0;
+    }
 
     public static void main(String[] args) {
         VariableScope variableScope=new VariableScope();
@@ -16,11 +26,13 @@ public class VariableScope {
     }
 
     private int someMethod(int age, String name){
+        //String name=null;
         //int age=0;
         //int i = Integer.parseInt(0455);
         //List
         //String  str;
         //return age;
+        System.out.println(name);
         return 0;
     }
 
