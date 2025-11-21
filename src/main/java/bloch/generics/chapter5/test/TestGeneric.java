@@ -22,8 +22,15 @@ public class TestGeneric {
         //objectList.add("I don't fit in");
     }
 
+    public static void useGenericExtends() {
+        List<? extends Number> list = List.of(1, 2, 3);
+        //list.add(4);
+        System.out.println(list);
+    }
+
     public static void main(String[] args) {
         //useGeneric();
         //listAndArrays();
+        useGenericExtends();
     }
 }
