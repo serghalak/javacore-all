@@ -21,7 +21,9 @@ public class RecursiveTypeBound {
     }
 
     public static void main(String[] args) {
-        List<String> argList = Arrays.asList(args);
+        List<String> argList; // = Arrays.asList(args);
+        String[] arg = new String[]{"one", null, "three"};
+        argList = Arrays.asList(arg);
         System.out.println(max(argList));
     }
 }
