@@ -6,7 +6,11 @@ import java.util.List;
 // Private helper method for wildcard capture (Page 145)
 public class Swap {
     public static void swap(List<?> list, int i, int j) {
-        swapHelper(list, i, j);
+        //list.set(i, list.set(j, list.get(i)));
+        List<Object> objectList = (List<Object>) list;
+        objectList.set(i, j);
+        //objectList.set(i, objectList.set(j, objectList.get(i)));
+        //swapHelper(list, i, j);
     }
 
     // Private helper method for wildcard capture
@@ -16,7 +20,8 @@ public class Swap {
 
     public static void main(String[] args) {
         // Swap the first and last argument and print the resulting list
-        List<String> argList = Arrays.asList(args);
+        List<String> argList = List.of("One", "Two", "Three"); // = Arrays.asList(args);
+
         swap(argList, 0, argList.size() - 1);
         System.out.println(argList);
     }
