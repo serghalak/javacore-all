@@ -37,6 +37,11 @@ public class SortSimpleSwapElements {
         String[] stringArray = {"banana", "apple", "cherry", "date"};
         String[] sortedStringArray = sortElements(stringArray);
         System.out.println(Arrays.toString(sortedStringArray));
+
+        //fibonachi
+        int i = 6;
+        System.out.println("Fibonachi: " + i + " = " + fibonachi(i));
+
     }
 
 //    private static void <E extends E> E sortSimpleSwapElements<E extends Comparable<E>>(List<E> original) {
@@ -104,6 +109,14 @@ public class SortSimpleSwapElements {
                     arr[j+1] = temp;
                 }
             }
+        }
+    }
+
+    private static int fibonachi(int i) {
+        if (i < 2) {
+            return i;
+        } else {
+            return fibonachi(i - 1) + fibonachi(i - 2);
         }
     }
 }
