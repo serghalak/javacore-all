@@ -1,4 +1,4 @@
-package effectivejava.chapter6.item34;
+package bloch.chapter6.item34;
 
 // Switch on an enum to simulate a missing method (Page 167)
 public class Inverse {

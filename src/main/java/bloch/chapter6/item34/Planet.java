@@ -1,4 +1,4 @@
-package effectivejava.chapter6.item34;
+package bloch.chapter6.item34;
 
 // Enum type with data and behavior  (159-160)
 public enum Planet {

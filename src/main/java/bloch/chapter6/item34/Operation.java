@@ -1,4 +1,4 @@
-package effectivejava.chapter6.item34;
+package bloch.chapter6.item34;
 import java.util.*;
 import java.util.stream.Stream;
 
