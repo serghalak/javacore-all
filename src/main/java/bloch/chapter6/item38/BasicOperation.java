@@ -1,4 +1,4 @@
-package effectivejava.chapter6.item38;
+package bloch.chapter6.item38;
 
 // Emulated extensible enum using an interface - Basic implementation (Page 176)
 public enum BasicOperation implements Operation {

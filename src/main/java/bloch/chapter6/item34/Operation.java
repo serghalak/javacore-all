@@ -6,28 +6,26 @@ import static java.util.stream.Collectors.toMap;
 
 // Enum type with constant-specific class bodies and data (Pages 163-4)
 public enum Operation {
-    PLUS("+", "plus") {
+    PLUS("+") {
         public double apply(double x, double y) { return x + y; }
     },
-    MINUS("-", "minus") {
+    MINUS("-") {
         public double apply(double x, double y) { return x - y; }
     },
-    TIMES("*", "times") {
+    TIMES("*") {
         public double apply(double x, double y) { return x * y; }
     },
-    DIVIDE("/", "divide") {
+    DIVIDE("/") {
         public double apply(double x, double y) { return x / y; }
     };
 
     private final String symbol;
-    private final String description;
 
-    Operation(String symbol, String description) {
+    Operation(String symbol) {
         this.symbol = symbol;
-        this.description = description;
     }
 
-    @Override public String toString() { return symbol + ": "  + description; }
+    @Override public String toString() { return symbol; }
 
     public abstract double apply(double x, double y);
 
@@ -46,7 +44,7 @@ public enum Operation {
         double x = 2.0; //Double.parseDouble(args[0]);
         double y = 4.0; //Double.parseDouble(args[1]);
         for (Operation op : Operation.values()) {
-            System.out.println(op + " " + valueOf(op.name()) );
+            //System.out.println(op + " " + valueOf(op.name()) );
             System.out.printf("%f %s %f = %f%n",
                     x, op, y, op.apply(x, y));
         }

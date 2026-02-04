@@ -1,4 +1,4 @@
-package effectivejava.chapter6.item38;
+package bloch.chapter6.item38;
 import java.util.*;
 
 // Emulated extensible enum (Pages 176-9)
