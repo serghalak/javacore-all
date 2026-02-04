@@ -6,24 +6,28 @@ import static java.util.stream.Collectors.toMap;
 
 // Enum type with constant-specific class bodies and data (Pages 163-4)
 public enum Operation {
-    PLUS("+") {
+    PLUS("+", "plus") {
         public double apply(double x, double y) { return x + y; }
     },
-    MINUS("-") {
+    MINUS("-", "minus") {
         public double apply(double x, double y) { return x - y; }
     },
-    TIMES("*") {
+    TIMES("*", "times") {
         public double apply(double x, double y) { return x * y; }
     },
-    DIVIDE("/") {
+    DIVIDE("/", "divide") {
         public double apply(double x, double y) { return x / y; }
     };
 
     private final String symbol;
+    private final String description;
 
-    Operation(String symbol) { this.symbol = symbol; }
+    Operation(String symbol, String description) {
+        this.symbol = symbol;
+        this.description = description;
+    }
 
-    @Override public String toString() { return symbol; }
+    @Override public String toString() { return symbol + ": "  + description; }
 
     public abstract double apply(double x, double y);
 
@@ -34,14 +38,17 @@ public enum Operation {
 
     // Returns Operation for string, if any
     public static Optional<Operation> fromString(String symbol) {
+        //return Optional.of(valueOf(symbol));
         return Optional.ofNullable(stringToEnum.get(symbol));
     }
 
     public static void main(String[] args) {
-        double x = Double.parseDouble(args[0]);
-        double y = Double.parseDouble(args[1]);
-        for (Operation op : Operation.values())
+        double x = 2.0; //Double.parseDouble(args[0]);
+        double y = 4.0; //Double.parseDouble(args[1]);
+        for (Operation op : Operation.values()) {
+            System.out.println(op + " " + valueOf(op.name()) );
             System.out.printf("%f %s %f = %f%n",
                     x, op, y, op.apply(x, y));
+        }
     }
 }
