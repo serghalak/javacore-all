@@ -36,8 +36,8 @@ public enum ExtendedOperation implements Operation {
 
     // Using a collection instance to represent a collection of extended enums (page 178)
     public static void main(String[] args) {
-        double x = Double.parseDouble(args[0]);
-        double y = Double.parseDouble(args[1]);
+        double x = 2.0; //Double.parseDouble(args[0]);
+        double y = 3.0; //Double.parseDouble(args[1]);
         test(Arrays.asList(ExtendedOperation.values()), x, y);
     }
     private static void test(Collection<? extends Operation> opSet,
