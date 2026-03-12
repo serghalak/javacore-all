@@ -1,4 +1,4 @@
-package effectivejava.chapter7.item43;
+package bloch.chapter7.item43;
 
 import java.util.Map;
 import java.util.TreeMap;

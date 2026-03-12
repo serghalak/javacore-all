@@ -1,4 +1,4 @@
-package effectivejava.chapter7.item42;
+package bloch.chapter7.item42;
 
 import java.util.function.DoubleBinaryOperator;
 

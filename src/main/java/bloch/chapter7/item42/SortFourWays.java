@@ -1,4 +1,4 @@
-package effectivejava.chapter7.item42;
+package bloch.chapter7.item42;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -11,6 +11,7 @@ import static java.util.Comparator.comparingInt;
 // Sorting with function objects (Pages 193-4)
 public class SortFourWays {
     public static void main(String[] args) {
+        args = new String[] { "Java", "is", "a", "language", "with", "lambda", "expressions" };
         List<String> words = Arrays.asList(args);
 
         // Anonymous class instance as a function object - obsolete! (Page 193)
@@ -21,7 +22,7 @@ public class SortFourWays {
         });
         System.out.println(words);
         Collections.shuffle(words);
-
+        System.out.println("After shuffle: " + words);
         // Lambda expression as function object (replaces anonymous class) (Page 194)
         Collections.sort(words,
                 (s1, s2) -> Integer.compare(s1.length(), s2.length()));
