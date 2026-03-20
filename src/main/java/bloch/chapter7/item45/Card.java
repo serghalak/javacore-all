@@ -1,4 +1,4 @@
-package effectivejava.chapter7.item45;
+package bloch.chapter7.item45;
 
 import java.util.ArrayList;
 import java.util.List;

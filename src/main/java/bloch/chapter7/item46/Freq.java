@@ -2,6 +2,8 @@ package effectivejava.chapter7.item46;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -12,7 +14,9 @@ import static java.util.stream.Collectors.*;
 // Frequency table examples showing improper and proper use of stream (Page 210-11)
 public class Freq {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File(args[0]);
+        //File file = new File(args[0]);
+        //Path dictionary = Paths.get("src/main/java/bloch/chapter7/item45/anagrams/words.txt");
+        File file = new File("src/main/java/bloch/chapter7/item45/anagrams/words.txt");
 
 //        // Uses the streams API but not the paradigm--Don't do this!
 //        Map<String, Long> freq = new HashMap<>();
