@@ -3,11 +3,12 @@ package sorokinpavel.threads.lesson03;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class SimpleRaceConditionDemo {
 
-    private static int counter = 0;
-
+    //private static int counter = 0;
+    private static AtomicInteger counter = new AtomicInteger(0);
     public static void main(String[] args) {
         int threads = 8;
         int incrementsPerThread = 100_000;
@@ -16,7 +17,8 @@ public class SimpleRaceConditionDemo {
         for (int i = 0; i < threads; i++) {
             Thread t = new Thread(() -> {
                 for (int j = 0; j < incrementsPerThread; j++) {
-                    counter++;
+                    //counter++;
+                    counter.incrementAndGet();
                 }
             });
             list.add(t);
