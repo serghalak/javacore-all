@@ -1,0 +1,5 @@
+```
+var name = java.lang.IO.readln("What is your name? ");
+var age = 1 * java.lang.IO.readln("How old are you? ");
+```
+Hello, `name`! Next year, you will be `age + 1`.

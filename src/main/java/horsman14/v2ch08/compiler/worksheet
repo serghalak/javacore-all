@@ -1,0 +1,9 @@
+What is your name?
+```
+String name = ???;
+```
+How old are you?
+```
+int age = Integer.parseInt(???);
+```
+Hello, `name`! Next year, you will be `age + 1`.

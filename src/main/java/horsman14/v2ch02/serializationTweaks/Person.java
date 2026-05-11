@@ -1,0 +1,25 @@
+package horsman14.v2ch02.serializationTweaks;
+
+import module java.base;
+
+public class Person implements Serializable {
+    private int id;
+    private String name;
+
+    public Person(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    private Object writeReplace() {
+        return new PersonProxy(id);
+    }
+
+    public String toString() {
+        return "%s[id=%d,name=%s]".formatted(getClass().getName(), id, name);
+    }
+}

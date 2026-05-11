@@ -1,0 +1,90 @@
+package horsman14.v2ch05.exec;
+
+import module java.base;
+import module java.sql;
+
+/**
+ * Executes all SQL statements in a file or the console.
+ */
+public class ExecSQL {
+    void main(String[] args) throws Exception {
+        try (Scanner in = args.length == 0 ? new Scanner(System.in)
+                : new Scanner(Path.of(args[0]));
+            Connection conn = getConnection()) {
+            
+            Statement stat = conn.createStatement();
+            while (true) {
+                if (args.length == 0) IO.println("Enter command or EXIT to exit:");
+
+                if (!in.hasNextLine()) return;
+
+                String line = in.nextLine().strip();
+                if (line.equalsIgnoreCase("EXIT")) return;
+                if (line.endsWith(";")) // remove trailing semicolon
+                    line = line.substring(0, line.length() - 1);
+                try {
+                    boolean isResult = stat.execute(line);
+                    if (isResult) {
+                        try (ResultSet rs = stat.getResultSet()) {
+                            showResultSet(rs);
+                        }
+                    } else {
+                        int updateCount = stat.getUpdateCount();
+                        IO.println(updateCount + " rows updated");
+                    }
+                }
+                catch (SQLException e) {
+                    for (Throwable t : e)
+                        t.printStackTrace();
+                }
+            }
+        }
+        catch (SQLException e) {
+            for (Throwable t : e)
+                t.printStackTrace();
+        }
+    }
+
+    /**
+     * Gets a connection from the properties specified in the file database.properties
+     * @return the database connection
+     */
+    public static Connection getConnection() throws SQLException, IOException {
+        var props = new Properties();
+        try (Reader in = Files.newBufferedReader(
+                Path.of("v2ch05", "database.properties"))) {
+            props.load(in);
+        }
+        String drivers = props.getProperty("jdbc.drivers");
+        if (drivers != null) System.setProperty("jdbc.drivers", drivers);
+
+        String url = props.getProperty("jdbc.url");
+        String username = props.getProperty("jdbc.username");
+        String password = props.getProperty("jdbc.password");
+
+        return DriverManager.getConnection(url, username, password);
+    }
+
+    /**
+     * Prints a result set.
+     * @param result the result set to be printed
+     */
+    void showResultSet(ResultSet result) throws SQLException {
+        ResultSetMetaData metaData = result.getMetaData();
+        int columnCount = metaData.getColumnCount();
+
+        for (int i = 1; i <= columnCount; i++) {
+            if (i > 1) IO.print(", ");
+            IO.print(metaData.getColumnLabel(i));
+        }
+        IO.println();
+
+        while (result.next()) {
+            for (int i = 1; i <= columnCount; i++) {
+                if (i > 1) IO.print(", ");
+                IO.print(result.getString(i));
+            }
+            IO.println();
+        }
+    }
+}
