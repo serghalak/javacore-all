@@ -11,6 +11,7 @@ public class SetList {
             set.add(i);
             list.add(i);
         }
+        System.out.println(set + " " + list);
         for (int i = 0; i < 3; i++) {
             set.remove(i);
             list.remove(i);

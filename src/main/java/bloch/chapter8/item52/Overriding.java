@@ -1,4 +1,4 @@
-package effectivejava.chapter8.item52;
+package bloch.chapter8.item52;
 
 import java.util.List;
 
