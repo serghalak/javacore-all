@@ -1,4 +1,4 @@
-package horsman14.v1ch05;
+package v1ch05;
 
 import module java.base;
 
