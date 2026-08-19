@@ -1,4 +1,4 @@
-package horsman14.v1ch06.clone;
+package v1ch06.clone;
 
 import module java.base;
 
@@ -26,19 +26,35 @@ public class Employee implements Cloneable {
         return cloned;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getHireDay() {
+        return hireDay;
+    }
+
+    public void setHireDay(Date hireDay) {
+        this.hireDay = hireDay;
+    }
+
     /**
      * Set the hire day to a given date.
      * @param year the year of the hire day
      * @param month the month of the hire day
      * @param day the day of the hire day
      */
-    public void setHireDay(int year, int month, int day) {
-        long epochMillis = LocalDate.of(year, month, day).atStartOfDay(ZoneId.systemDefault())
-                .toEpochSecond() * 1000;
-
-        // example of instance field mutation
-        hireDay.setTime(epochMillis);
-    }
+//    public void setHireDay(int year, int month, int day) {
+//        long epochMillis = LocalDate.of(year, month, day).atStartOfDay(ZoneId.systemDefault())
+//                .toEpochSecond() * 1000;
+//
+//        // example of instance field mutation
+//        hireDay.setTime(epochMillis);
+//    }
 
     public void raiseSalary(double byPercent) {
         double raise = salary * byPercent / 100;
