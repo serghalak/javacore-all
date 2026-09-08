@@ -1,4 +1,4 @@
-package horsman14.v1ch06.innerClass;
+package v1ch06.innerClass;
 
 import module java.desktop;
 
@@ -10,6 +10,7 @@ class InnerClassDemo {
         var clock = new TalkingClock(1000, true);
         clock.start();
 
+        TalkingClock.TimePrinter timePrinter = clock.new TimePrinter();
         // keep program running until the user selects "OK"
         JOptionPane.showMessageDialog(null, "Quit program?");
         System.exit(0);

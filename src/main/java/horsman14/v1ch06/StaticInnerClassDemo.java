@@ -1,4 +1,4 @@
-package horsman14.v1ch06;
+package v1ch06;
 
 /**
  * This program demonstrates the use of static inner classes.
