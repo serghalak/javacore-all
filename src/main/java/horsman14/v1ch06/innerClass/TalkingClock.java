@@ -1,4 +1,4 @@
-package horsman14.v1ch06.innerClass;
+package v1ch06.innerClass;
 
 import module java.base;
 import module java.desktop;
