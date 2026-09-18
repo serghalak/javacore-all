@@ -1,4 +1,4 @@
-package horsman14.v1ch06.serviceLoader;
+package v1ch06.serviceLoader;
 
 import module java.base;
 

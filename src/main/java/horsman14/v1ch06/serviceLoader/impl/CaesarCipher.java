@@ -1,6 +1,6 @@
-package horsman14.v1ch06.serviceLoader.impl;
+package v1ch06.serviceLoader.impl;
 
-import horsman14.v1ch06.serviceLoader.Cipher;
+import v1ch06.serviceLoader.Cipher;
 
 public class CaesarCipher implements Cipher {
     public byte[] encrypt(byte[] source, byte[] key) {

@@ -1,4 +1,4 @@
-package horsman14.v1ch06.serviceLoader;
+package v1ch06.serviceLoader;
 
 public interface Cipher {
     byte[] encrypt(byte[] source, byte[] key);
