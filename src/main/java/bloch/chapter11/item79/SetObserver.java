@@ -1,4 +1,6 @@
-package effectivejava.chapter11.item79;
+package bloch.chapter11.item79;
+
+import bloch.chapter11.item79.ObservableSet;
 
 // Set obeserver callback interface - Page 266
 public interface SetObserver<E> {

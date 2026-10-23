@@ -1,4 +1,4 @@
-package effectivejava.chapter11.item79;
+package bloch.chapter11.item79;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -11,7 +11,7 @@ public class Test3 {
                 new ObservableSet<>(new HashSet<>());
 
 // Observer that uses a background thread needlessly
-        set.addObserver(new SetObserver<>() {
+        set.addObserver(new SetObserver<Integer>() {
             public void added(ObservableSet<Integer> s, Integer e) {
                 System.out.println(e);
                 if (e == 23) {

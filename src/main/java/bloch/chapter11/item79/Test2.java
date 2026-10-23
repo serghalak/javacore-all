@@ -1,4 +1,6 @@
-package effectivejava.chapter11.item79;
+package bloch.chapter11.item79;
+import bloch.chapter11.item79.ObservableSet;
+
 import java.util.*;
 
 // More complex test of ObservableSet - Page 318-9
